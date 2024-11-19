@@ -1,32 +1,53 @@
-// List of colors
-const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink"];
+document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-// Select elements
-const colorDisplay = document.getElementById("colorDisplay");
-const colorButtons = document.getElementById("colorButtons");
-const message = document.getElementById("message");
+    let score = 0;
+    const totalQuestions = 5;
 
-// Pick a random color
-let correctColor = colors[Math.floor(Math.random() * colors.length)];
+    // Clear all previous feedback
+    document.querySelectorAll('.feedback').forEach(feedback => {
+        feedback.textContent = '';
+    });
 
-// Display the correct color in the instructions
-colorDisplay.textContent = correctColor;
+    // Correct answers for each question
+    const correctAnswers = {
+        q1: 'B',
+        q2: 'B',
+        q3: 'B',
+        q4: 'C',
+        q5: 'A'
+    };
 
-// Generate color buttons
-colors.forEach(color => {
-    const button = document.createElement("button");
-    button.style.backgroundColor = color;
-    button.addEventListener("click", () => checkColor(color));
-    colorButtons.appendChild(button);
+    // Check each question
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionName = 'q' + i;
+        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+        const feedbackElement = document.getElementById(`feedback${i}`);
+
+        if (selectedOption) {
+            if (selectedOption.value === correctAnswers[questionName]) {
+                feedbackElement.textContent = '✔ Correct!';
+                feedbackElement.style.color = 'green';
+                score++;
+            } else {
+                feedbackElement.textContent = '✖ Incorrect!';
+                feedbackElement.style.color = 'red';
+            }
+        } else {
+            feedbackElement.textContent = '✖ No answer selected!';
+            feedbackElement.style.color = 'red';
+        }
+    }
+
+    alert(`Your score is ${score} out of ${totalQuestions}`);
 });
 
-// Function to check if the guessed color is correct
-function checkColor(selectedColor) {
-    if (selectedColor === correctColor) {
-        message.textContent = "Correct! You guessed the color!";
-        message.style.color = "green";
+function submitAssignment() {
+    const assignmentText = document.getElementById('assignmentInput').value;
+    if (assignmentText.trim() === "") {
+        alert("Please write something before submitting!");
     } else {
-        message.textContent = "Wrong! Try again.";
-        message.style.color = "red";
+        alert("Your assignment has been submitted. Please send it to the email provided.");
+        document.getElementById('assignmentInput').value = ''; // Clear the textarea
     }
 }
