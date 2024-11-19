@@ -3,16 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Guessing Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Introduction to Sets: Set Notation and Basic Operations</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-    <div class="game-container">
-        <h1>Color Guessing Game</h1>
-        <p id="instructions">Guess the color: <span id="colorDisplay">?</span></p>
-        <div class="buttons" id="colorButtons"></div>
-        <p id="message"></p>
-    </div>
-    <script src="script.js"></script>
+
+    <!-- Video Lecture Section -->
+    <section id="lecture">
+        <h1>Video Lecture: Introduction to Sets</h1>
+        <iframe width="400" height="315" src="https://www.youtube.com/embed/xZELQc11ACY?si=jbfaMxI3NEhohTnk" 
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h2>Quiz: Set Notation and Basic Operations</h2>
+        <form id="quizForm">
+            <div class="quiz-question">
+                <p>1. What does the symbol ∩ represent in set theory?</p>
+                <input type="radio" name="q1" value="A"> A. Union<br>
+                <input type="radio" name="q1" value="B"> B. Intersection<br>
+                <input type="radio" name="q1" value="C"> C. Difference<br>
+                <span class="feedback" id="feedback1"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. If A = {1, 2, 3} and B = {3, 4, 5}, what is A ∪ B?</p>
+                <input type="radio" name="q2" value="A"> A. {3}<br>
+                <input type="radio" name="q2" value="B"> B. {1, 2, 3, 4, 5}<br>
+                <input type="radio" name="q2" value="C"> C. {1, 2, 4, 5}<br>
+                <span class="feedback" id="feedback2"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. The set of all possible outcomes in a probability experiment is called:</p>
+                <input type="radio" name="q3" value="A"> A. Null Set<br>
+                <input type="radio" name="q3" value="B"> B. Universal Set<br>
+                <input type="radio" name="q3" value="C"> C. Subset<br>
+                <span class="feedback" id="feedback3"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. Which of the following is the correct notation for the difference between sets A and B?</p>
+                <input type="radio" name="q4" value="A"> A. A ∪ B<br>
+                <input type="radio" name="q4" value="B"> B. A ∩ B<br>
+                <input type="radio" name="q4" value="C"> C. A - B<br>
+                <span class="feedback" id="feedback4"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. If A = {x | x is an even number} and B = {x | x is a prime number}, what is A ∩ B?</p>
+                <input type="radio" name="q5" value="A"> A. {2}<br>
+                <input type="radio" name="q5" value="B"> B. {2, 3}<br>
+                <input type="radio" name="q5" value="C"> C. {0}<br>
+                <span class="feedback" id="feedback5"></span>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </section>
+
+    <!-- Assignment Section -->
+    <section id="assignment">
+        <h2>Assignment</h2>
+        <p><strong>Assignment Question:</strong></p>
+        <p>Explain set notation and demonstrate the basic set operations (union, intersection, and difference) with appropriate examples. Create a Venn diagram to visually represent the operations.</p>
+        <p>Please submit your assignment by sending an email to: <a href="mailto:settheory101@gmail.com">settheory101@gmail.com</a></p>
+        <p>If the link does not work, send your assignment manually to: settheory101@gmail.com</p>
+        <textarea id="assignmentInput" rows="6" placeholder="Write your assignment here..."></textarea>
+        <button id="submitAssignment" onclick="submitAssignment()">Submit Assignment</button>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation">
+        <h2>PLEASE DONATE</h2>
+        <p>Account Number: 2032202001590</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/GTBank_logo.svg/768px-GTBank_logo.svg.png" alt="GTBank Logo" width="150">
+        <p>Wave Mobile: 3709558</p>
+        <img src="https://s.rfi.fr/media/display/ed44f02a-c239-11ec-b0fc-005056bf8594/w:1280/p:16x9/wave-senegal-mobile-money.png" alt="Wave Mobile Logo" width="150">
+    </section>
+
+    <script src="script.js"></script> <!-- Link to external JS file -->
 </body>
 </html>
